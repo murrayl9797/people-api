@@ -1,6 +1,4 @@
-/***********************************************************/
-/********* Pull in modules and declare constants ***********/
-/***********************************************************/
+// Pull in modules and declare constants
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -10,9 +8,7 @@ const router = require('./router');
 const app = express();
 
 
-/***********************************************************/
-/************************ Middleware ***********************/
-/***********************************************************/
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -20,7 +16,6 @@ app.use(bodyParser.json());
 app.use('/', router);
 
 
-/***********************************************************/
-/******************** Export server ************************/
-/***********************************************************/
+
+// Export Server
 module.exports = app;
