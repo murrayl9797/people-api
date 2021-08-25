@@ -1,0 +1,26 @@
+{
+  "name": "people-api",
+  "version": "1.0.0",
+  "description": "People Like You API for Bambu",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murrayl9797/people-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murrayl9797/people-api/issues"
+  },
+  "homepage": "https://github.com/murrayl9797/people-api#readme",
+  "dependencies": {
+    "aws-serverless-express": "^3.4.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
