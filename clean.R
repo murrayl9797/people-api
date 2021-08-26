@@ -36,3 +36,4 @@ write.csv(people_1,
           row.names = F,
           na = ""
 )
+

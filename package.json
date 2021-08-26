@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "local": "nodemon server/local.js"
+    "local": "nodemon server/local.js",
+    "loadDB": "node database/init.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "cors": "^2.8.5",
     "csv-parser": "^3.0.0",
     "express": "^4.17.1",
+    "express-validator": "^6.12.1",
     "fs": "0.0.1-security",
     "sqlite3": "^5.0.2"
   }

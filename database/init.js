@@ -17,22 +17,22 @@ db.serialize(err => {
     DROP TABLE IF EXISTS people;
   `)
 
-  // Init table
+  // Initialbe table schema
   db.run(`
     CREATE TABLE IF NOT EXISTS people (
       id INTEGER PRIMARY KEY,
       name TEXT,
-      age INTEGER,
+      age REAL,
       latitude REAL,
       longitude REAL,
-      monthlyIncome INTEGER,
-      experienced INTEGER
+      monthlyIncome REAL,
+      experienced REAL
     );
   `
   );
 
 
-  // Populate
+  // Populate table using csv
   const insert_stmt = db.prepare(`
       INSERT INTO people (
         name,
@@ -64,6 +64,7 @@ db.serialize(err => {
   });
 
 });
+
 
 // Close DB connection
 db.close(err => {
