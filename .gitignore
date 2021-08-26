@@ -1,7 +1,11 @@
-# Node stuff
+# Node
 node_modules
 package-lock.json
 
 
 # Serverless
 .serverless
+
+
+# Sqlite database
+*.db
