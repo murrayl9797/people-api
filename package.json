@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "local": "nodemon server/local.js",
-    "loadDB": "node database/init.js"
+    "loadDB": "node database/init.js",
+    "docker": "node server/local.js"
   },
   "repository": {
     "type": "git",
