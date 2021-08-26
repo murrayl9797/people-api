@@ -113,6 +113,16 @@ router.get(
       `(1.0 - abs(${age} - age) / (82.0))`
     ) : "0.0";
 
+    // Latitude
+    const latStr = latitude ? (
+      `(1.0 - abs(${latitude} - latitude) / (180.0))`
+    ) : "0.0";
+
+    // Longitude
+    const lngStr = longitude ? (
+      `(1.0 - abs(${longitude} - longitude) / (360.0))`
+    ) : "0.0";
+
     // Monthly Income
     const incomeStr = monthlyIncome ? (
       `(1.0 - abs(${monthlyIncome} - monthlyIncome) / (17000.0))`
@@ -128,6 +138,8 @@ router.get(
         round(
             (
               ${ageStr} +
+              ${latStr} +
+              ${lngStr} +
               ${incomeStr} +
               ${experiencedStr}
             ) / ?
