@@ -5,11 +5,16 @@ const { Router } = require("express");
 const { query, oneOf, validationResult } = require("express-validator");
 const bodyParser = require("body-parser");
 const sqlite3 = require("sqlite3").verbose();
-
+const path = require("path");
 
 const router = Router();
-const db = new sqlite3.Database("database/people.db");
 
+console.log('Hi')
+console.log(__dirname)
+console.log("HELLLO: ", __dirname);
+const db = new sqlite3.Database(path.resolve(__dirname, "../database/people.db"));
+console.log('Bye')
+console.log("DB: ", db);
 
 const SCORE_PRECISION = 3;
 const RESULT_LENGTH = 10;

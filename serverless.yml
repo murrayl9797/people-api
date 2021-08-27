@@ -49,12 +49,12 @@ provider:
 #    variable1: value1
 
 # you can add packaging information here
-package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
- exclude:
-   - node_modules
+# package:
+# #  include:
+# #    - include-me.js
+# #    - include-me-dir/**
+#  exclude:
+#    - node_modules
 
 functions:
   app-api:
