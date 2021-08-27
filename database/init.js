@@ -15,7 +15,7 @@ db.serialize(err => {
   // Delete table if exists
   db.run(`
     DROP TABLE IF EXISTS people;
-  `)
+  `);
 
   // Initialbe table schema
   db.run(`
@@ -44,16 +44,15 @@ db.serialize(err => {
       ) VALUES (
         ?, ?, ?, ?, ?, ?
       )
-  `)
+  `);
 
-  queries = []
+
   fs.createReadStream('database/people.csv')
     .pipe(csv())
     .on('data', data => {
 
       // Insert
       insert_stmt.run(Object.values(data));
-      // queries.push(data);
 
     })
     .on('end', _ => {
@@ -71,14 +70,14 @@ db.close(err => {
 
   // Finish timer
   const end = Date.now();
-  console.log(`Finished in ${(end - start) / 1000} seconds.`)
+  console.log(`Finished in ${(end - start) / 1000} seconds.`);
 
   // Check for errors
   if (err) {
     console.err(err)
-    console.log(`Error closing DB connection^^^`)
+    console.log(`Error closing DB connection^^^`);
   } else {
-    console.log(`Successfully closed DB connection!`)
+    console.log(`Successfully closed DB connection!`);
   }
 
 });

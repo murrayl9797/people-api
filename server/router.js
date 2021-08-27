@@ -8,13 +8,8 @@ const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 
 const router = Router();
-
-console.log('Hi')
-console.log(__dirname)
-console.log("HELLLO: ", __dirname);
 const db = new sqlite3.Database(path.resolve(__dirname, "../database/people.db"));
-console.log('Bye')
-console.log("DB: ", db);
+
 
 const SCORE_PRECISION = 3;
 const RESULT_LENGTH = 10;
@@ -81,7 +76,7 @@ router.get(
       experienced
     } = req.query
 
-    // If no params, error
+    // If no params, tell client
     if (JSON.stringify(req.query) == "{}") {
 
       res.status(404).send({
@@ -92,7 +87,7 @@ router.get(
       return null;
     }
 
-    // If unknown param
+    // If unknown params, tell client
     for (let param in req.query) {
 
       if (!VALID_PARAMS.includes(param)) {
@@ -172,6 +167,7 @@ router.get(
           "peopleLikeYou": rows.filter(
             p => p.score > 0
           ).map(
+            // Clean up JSON response a bit
             p => {
               p.experienced = p.experienced == 1 ? "true" : "false";
               delete p.id;

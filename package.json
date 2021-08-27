@@ -29,5 +29,8 @@
     "express-validator": "^6.12.1",
     "fs": "0.0.1-security",
     "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "serverless-plugin-warmup": "^5.3.1"
   }
 }
